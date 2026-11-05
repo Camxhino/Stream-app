@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subir Video - Streaming Platform</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="upload.css">
+</head>
+<body>
+  <header>
+    <h1><a href="index.html" style="color: inherit; text-decoration: none;">Streaming Platform</a></h1>
+  </header>
+
+  <main class="upload-main">
+    <section class="upload-container">
+      <h2>Subir Nuevo Video</h2>
+      <form id="upload-form" class="upload-form">
+        <div class="form-group">
+          <label for="title">Título del Video</label>
+          <input type="text" id="title" required placeholder="Ej. Arquitectura FastAPI y AWS">
+        </div>
+
+        <div class="form-group">
+          <label for="description">Descripción</label>
+          <textarea id="description" rows="3" required placeholder="Detalles del contenido..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="category">Categoría</label>
+          <input type="text" id="category" required placeholder="Ej. Desarrollo">
+        </div>
+
+        <div class="form-group">
+          <label for="thumbnail-file">Miniatura (Imagen)</label>
+          <input type="file" id="thumbnail-file" accept="image/*" required>
+        </div>
+
+        <div class="form-group">
+          <label for="video-file">Archivo de Video</label>
+          <input type="file" id="video-file" accept="video/*" required>
+        </div>
+
+        <button type="submit" id="submit-btn">Subir Contenido a S3</button>
+      </form>
+      <div id="upload-status" class="upload-status"></div>
+    </section>
+  </main>
+
+  <script src="upload.js"></script>
+</body>
+</html>

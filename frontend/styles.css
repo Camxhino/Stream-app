@@ -1,0 +1,90 @@
+:root {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-color: #f8fafc;
+  --accent-color: #38bdf8;
+  --accent-hover: #0ea5e9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  padding-bottom: 2rem;
+}
+
+header {
+  background: var(--card-bg);
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #334155;
+}
+
+header h1 {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+}
+
+main {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.video-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.video-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.video-card-content {
+  padding: 1rem;
+}
+
+.video-card-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.video-card-content p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
